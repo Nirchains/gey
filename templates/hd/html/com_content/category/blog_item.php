@@ -42,6 +42,13 @@ $useDefList = ($params->get('show_title') || $params->get('show_modify_date') ||
 
 <?php } ?>
 
+<?php
+	if($post_format=='standard') {
+		echo JLayoutHelper::render('joomla.content.intro_image', $this->item);
+	} else {
+		echo JLayoutHelper::render('joomla.content.post_formats.post_' . $post_format, array('params' => $post_attribs, 'item' => $this->item));
+	}
+?>
 <?php if ($tpl_params->get('blog_layout') == 'masonry') { ?>
 <!-- START Post-intro --><div class="post_intro">
 <div class="entry-header">
@@ -75,30 +82,11 @@ $useDefList = ($params->get('show_title') || $params->get('show_modify_date') ||
 	<?php echo JLayoutHelper::render('joomla.content.info_block.block', array('item' => $this->item, 'params' => $params, 'position' => 'below')); ?>
 </div>
 <?php endif; ?>
-<?php
-	if($post_format=='standard') {
-		$imagenes = json_decode($this->item->images);
-		if((isset($imagenes->image_intro) && !empty($imagenes->image_intro))) {
-			echo ('<div class="row"><div class="col-sm-2">');
-			echo JLayoutHelper::render('joomla.content.intro_image', $this->item);
-			echo ('</div>');
-			echo ('<div class="col-sm-10"');
-		}
-	} else {
-		echo JLayoutHelper::render('joomla.content.post_formats.post_' . $post_format, array('params' => $post_attribs, 'item' => $this->item));
-	}
-?>
 <?php if (!$params->get('show_intro')) : ?>
 	<?php echo $this->item->event->afterDisplayTitle; ?>
 <?php endif; ?>
 <?php echo $this->item->event->beforeDisplayContent; ?>	
 <?php echo $this->item->introtext; ?>
-<?php if($post_format=='standard') {
-	if((isset($imagenes->image_intro) && !empty($imagenes->image_intro))) {
-		echo ('</div></div>');
-	}
-	} 
-?>
 <?php if ($params->get('show_readmore') && $this->item->readmore) :
 	if ($params->get('access-view')) :
 		$link = JRoute::_(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language));
