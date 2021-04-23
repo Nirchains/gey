@@ -81,15 +81,18 @@ h5 {
 #sp-header #sp-menu .sp-megamenu-parent >li.sp-has-child.active>a {
   color: #DB760F !important;
 }
-#sp-header {
-  background: rgba(255,255,255,0.9);
+#sp-header,
+.sticky .sticky__wrapper {
+  background: rgba(239,239,239,0.9);
 }
-#sp-header a {
+#sp-header a,
+.sticky .sticky__wrapper a {
   color: #444444;
   font-weight: 600;
   letter-spacing: 1px;
 }
-#sp-header a:hover {
+#sp-header a:hover,
+.sticky .sticky__wrapper a:hover {
   color: #666666;
 }
 #sp-right .nav-child {
