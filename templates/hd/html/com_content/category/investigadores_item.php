@@ -44,7 +44,7 @@ $useDefList = ($params->get('show_title') || $params->get('show_modify_date') ||
 
 <?php
 	if($post_format=='standard') {
-		echo JLayoutHelper::render('joomla.content.intro_image', $this->item);
+		
 	} else {
 		echo JLayoutHelper::render('joomla.content.post_formats.post_' . $post_format, array('params' => $post_attribs, 'item' => $this->item));
 	}
@@ -86,7 +86,16 @@ $useDefList = ($params->get('show_title') || $params->get('show_modify_date') ||
 	<?php echo $this->item->event->afterDisplayTitle; ?>
 <?php endif; ?>
 <?php echo $this->item->event->beforeDisplayContent; ?>	
-<?php echo $this->item->introtext; ?>
+<div class="row">
+	<div class="col-sm-2">
+	<?php 
+		echo JLayoutHelper::render('joomla.content.intro_image', $this->item);
+	?>
+	</div>
+	<div class="col-sm-10">
+		<?php echo $this->item->introtext; ?>
+	</div>	
+</div>
 <?php if ($params->get('show_readmore') && $this->item->readmore) :
 	if ($params->get('access-view')) :
 		$link = JRoute::_(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language));
