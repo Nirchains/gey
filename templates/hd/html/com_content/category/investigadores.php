@@ -116,7 +116,7 @@ endif;
 					itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 					<?php
 					$this->item = & $item;
-					echo $this->loadTemplate('item');
+					echo $this->loadTemplate('investigadores_item');
 					?>
 				</article>&nbsp;
 				<?php $leadingcount++; ?>
