@@ -44,7 +44,7 @@ $useDefList = ($params->get('show_title') || $params->get('show_modify_date') ||
 
 <?php
 	if($post_format=='standard') {
-		echo JLayoutHelper::render('joomla.content.intro_image', $this->item);
+		
 	} else {
 		echo JLayoutHelper::render('joomla.content.post_formats.post_' . $post_format, array('params' => $post_attribs, 'item' => $this->item));
 	}
@@ -82,6 +82,9 @@ $useDefList = ($params->get('show_title') || $params->get('show_modify_date') ||
 	<?php echo JLayoutHelper::render('joomla.content.info_block.block', array('item' => $this->item, 'params' => $params, 'position' => 'below')); ?>
 </div>
 <?php endif; ?>
+<?php
+echo JLayoutHelper::render('joomla.content.intro_image', $this->item);
+?>
 <?php if (!$params->get('show_intro')) : ?>
 	<?php echo $this->item->event->afterDisplayTitle; ?>
 <?php endif; ?>

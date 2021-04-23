@@ -31,7 +31,7 @@ $post_format = $post_attribs->get('post_format', 'standard');
 
 <?php
 	if($post_format=='standard') {
-		
+		echo JLayoutHelper::render('joomla.content.intro_image', $this->item);
 	} else {
 		echo JLayoutHelper::render('joomla.content.post_formats.post_' . $post_format, array('params' => $post_attribs, 'item' => $this->item));
 	}
@@ -51,10 +51,6 @@ $post_format = $post_attribs->get('post_format', 'standard');
 <?php if ($canEdit || $params->get('show_print_icon') || $params->get('show_email_icon')) : ?>
 	<?php echo JLayoutHelper::render('joomla.content.icons', array('params' => $params, 'item' => $this->item, 'print' => false)); ?>
 <?php endif; ?>
-
-<?php
-	echo JLayoutHelper::render('joomla.content.intro_image', $this->item);
-?>
 
 <?php if (!$params->get('show_intro')) : ?>
 	<?php echo $this->item->event->afterDisplayTitle; ?>
