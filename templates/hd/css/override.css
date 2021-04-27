@@ -21,6 +21,10 @@ h5 {
   font-family: 'Rippen Regular';
   text-align: left;
 }
+
+h2.page_title {
+  text-align: center;
+}
 .item-page .article-info {
   padding-top: 0px;
   padding-bottom: 10px;
