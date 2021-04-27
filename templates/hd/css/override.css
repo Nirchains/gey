@@ -19,6 +19,7 @@ h3,
 h4,
 h5 {
   font-family: 'Rippen Regular';
+  text-align: left;
 }
 .item-page .article-info {
   padding-top: 0px;
