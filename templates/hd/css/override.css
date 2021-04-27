@@ -175,6 +175,11 @@ table tbody >tr td {
   font-weight: normal;
   text-align: center;
 }
+
+.helix-social-share .helix-social-share-blog {
+  float: right;
+}
+
 @media screen and (min-width: 1200px) {
   .page-title {
     font-size: 18px;
