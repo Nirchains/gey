@@ -22,7 +22,7 @@ h5 {
   text-align: left;
 }
 
-h2.page_title, h2.sppb-title-heading {
+h2.page_title, h2.sppb-title-heading, h2.sppb-addon-title {
   text-align: center;
 }
 .item-page .article-info {
